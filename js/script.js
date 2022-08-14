@@ -9,7 +9,45 @@ function priceUpdate(itemId, price) {
     const totalCostOutput = document.getElementById('total-cost');
     totalCostOutput.innerText = totalCost;
 }
+// onclick funtion to get output 
+function onClick(item, itemId, price) {
+    document.getElementById(item).addEventListener('click', function () {
+        priceUpdate(itemId, price);
+    })
+}
+// common funtion 
+onClick('fourGB', 'memory-cost', 100)
+onClick('eightGB', 'memory-cost', 150)
+onClick('sixteenGB', 'memory-cost', 200)
+onClick('ssd1', 'storage-cost', 300)
+onClick('ssd2', 'storage-cost', 350)
+onClick('ssd3', 'storage-cost', 400)
+onClick('free-delivery', 'delivery-cost', 0)
+onClick('delivery1', 'delivery-cost', 10)
+onClick('delivery2', 'delivery-cost', 20)
 
+
+// promo code apply 
+const promoCode = 'hardwork';
+document.getElementById('apply-btn').addEventListener('click', function () {
+    const inputCode = document.getElementById('promo-input').value;
+    if (inputCode === promoCode) {
+        const totalPriceText = document.getElementById('total-cost');
+        let totalPrice = parseFloat(totalPriceText.innerText)
+        const discount = totalPrice * 0.20;
+        totalPrice = totalPrice - discount;
+        totalPriceText.innerText = totalPrice;
+    }
+    else {
+
+    }
+
+});
+
+
+
+
+/* 
 // memory cost update 
 document.getElementById('fourGB').addEventListener('click', function () {
     priceUpdate('memory-cost', 100);
@@ -42,31 +80,7 @@ document.getElementById('delivery1').addEventListener('click', function () {
 document.getElementById('delivery2').addEventListener('click', function () {
     priceUpdate('delivery-cost', 20)
 })
-
-// promo code apply 
-const promoCode = 'HARDWORK';
-document.getElementById('apply-btn').addEventListener('click', function () {
-    const inputCode = document.getElementById('promo-input').value;
-    if (inputCode === promoCode) {
-        const totalPriceText = document.getElementById('total-cost');
-        let totalPrice = parseFloat(totalPriceText.innerText)
-        const discount = totalPrice * 0.20;
-        totalPrice = totalPrice - discount;
-        totalPriceText.innerText = totalPrice;
-    }
-    else {
-
-    }
-
-})
-
-
-
-
-
-
-
-
+ */
 
 
 
