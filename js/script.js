@@ -9,6 +9,7 @@ function priceUpdate(itemId, price) {
     const totalCostOutput = document.getElementById('total-cost');
     totalCostOutput.innerText = totalCost;
 }
+
 // memory cost update 
 document.getElementById('fourGB').addEventListener('click', function () {
     priceUpdate('memory-cost', 100);
@@ -19,6 +20,7 @@ document.getElementById('eightGB').addEventListener('click', function () {
 document.getElementById('sixteenGB').addEventListener('click', function () {
     priceUpdate('memory-cost', 200)
 })
+
 // storage cost update 
 document.getElementById('ssd1').addEventListener('click', function () {
     priceUpdate('storage-cost', 300)
@@ -29,7 +31,18 @@ document.getElementById('ssd2').addEventListener('click', function () {
 document.getElementById('ssd3').addEventListener('click', function () {
     priceUpdate('storage-cost', 400)
 })
+
 // delivery cost update
+document.getElementById('free-delivery').addEventListener('click', function () {
+    priceUpdate('delivery-cost', 0)
+})
+document.getElementById('delivery1').addEventListener('click', function () {
+    priceUpdate('delivery-cost', 10)
+})
+document.getElementById('delivery2').addEventListener('click', function () {
+    priceUpdate('delivery-cost', 20)
+})
+
 
 
 
@@ -50,4 +63,3 @@ document.getElementById('ssd3').addEventListener('click', function () {
     const totalCostOutput = document.getElementById('total-cost');
     totalCostOutput.innerText = totalCost;
 }) */
-
