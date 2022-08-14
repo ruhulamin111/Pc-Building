@@ -9,12 +9,15 @@ function priceUpdate(itemId, price) {
     const totalCostOutput = document.getElementById('total-cost');
     totalCostOutput.innerText = totalCost;
 }
+
 // onclick funtion to get output 
 function onClick(item, itemId, price) {
     document.getElementById(item).addEventListener('click', function () {
         priceUpdate(itemId, price);
+        document.getElementById(item).style.backgroundColor = 'cornflowerblue';
     })
 }
+
 // common funtion 
 onClick('fourGB', 'memory-cost', 100)
 onClick('eightGB', 'memory-cost', 150)
