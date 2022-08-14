@@ -43,6 +43,23 @@ document.getElementById('delivery2').addEventListener('click', function () {
     priceUpdate('delivery-cost', 20)
 })
 
+// promo code apply 
+const promoCode = 'HARDWORK';
+document.getElementById('apply-btn').addEventListener('click', function () {
+    const inputCode = document.getElementById('promo-input').value;
+    if (inputCode === promoCode) {
+        const totalPriceText = document.getElementById('total-cost');
+        let totalPrice = parseFloat(totalPriceText.innerText)
+        const discount = totalPrice * 0.20;
+        totalPrice = totalPrice - discount;
+        totalPriceText.innerText = totalPrice;
+    }
+    else {
+
+    }
+
+})
+
 
 
 
