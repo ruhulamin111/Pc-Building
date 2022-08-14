@@ -1,3 +1,4 @@
+// common update price funtion 
 function priceUpdate(itemId, price) {
     const memory = document.getElementById(itemId);
     memory.innerText = price;
@@ -8,6 +9,7 @@ function priceUpdate(itemId, price) {
     const totalCostOutput = document.getElementById('total-cost');
     totalCostOutput.innerText = totalCost;
 }
+// memory cost update 
 document.getElementById('fourGB').addEventListener('click', function () {
     priceUpdate('memory-cost', 100);
 })
@@ -17,6 +19,26 @@ document.getElementById('eightGB').addEventListener('click', function () {
 document.getElementById('sixteenGB').addEventListener('click', function () {
     priceUpdate('memory-cost', 200)
 })
+// storage cost update 
+document.getElementById('ssd1').addEventListener('click', function () {
+    priceUpdate('storage-cost', 300)
+})
+document.getElementById('ssd2').addEventListener('click', function () {
+    priceUpdate('storage-cost', 350)
+})
+document.getElementById('ssd3').addEventListener('click', function () {
+    priceUpdate('storage-cost', 400)
+})
+// delivery cost update
+
+
+
+
+
+
+
+
+
 
 /* document.getElementById('eightGB').addEventListener('click', function () {
     const memory = document.getElementById('memory-cost');
